@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>About Me</h2>
+    <img id="profile-pic" src="default-profile.jpg" alt="Profile Picture" style="width: 150px; border-radius: 50%;">
+    <p>Welcome to my portfolio! I am a passionate developer with skills in various technologies.</p>
+
+    <h2 id="projects">Projects</h2>
+    <div id="project-list">
+        <!-- Projects will be dynamically inserted here -->
+    </div>
+
+    <h2>Upload Project</h2>
+    <form id="project-form">
+        <input type="text" id="project-title" placeholder="Project Title" required>
+        <input type="url" id="project-link" placeholder="Project Link" required>
+        <input type="file" id="project-image" accept="image/*" required>
+        <button type="submit">Add Project</button>
+    </form>
+
+    <h2 id="contact">Contact Me</h2>
+    <form id="contact-form">
+        <input type="text" id="contact-name" placeholder="Your Name" required>
+        <input type="email" id="contact-email" placeholder="Your Email" required>
+        <textarea id="contact-message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <h2>Social Links</h2>
+    <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Ador Alexander Yao. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('project-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const title = document.getElementById('project-title').value;
+        const link = document.getElementById('project-link').value;
+        const image = document.getElementById('project-image').files[0];
+
+        // Here you would typically send this data to your backend
+        console.log('Project Title:', title);
+        console.log('Project Link:', link);
+        console.log('Project Image:', image);
+
+        // Reset form
+        this.reset();
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('contact-name').value;
+        const email = document.getElementById('contact-email').value;
+        const message = document.getElementById('contact-message').value;
+
+        // Here you would typically send this data to your backend
+        console.log('Contact Name:', name);
+        console.log('Contact Email:', email);
+        console.log('Contact Message:', message);
+
+        // Reset form
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
