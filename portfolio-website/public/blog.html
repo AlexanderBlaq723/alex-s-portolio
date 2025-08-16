@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Mr.Ador Alexander</title>
+    <link rel="stylesheet" href="styles-blog.css">
+</head>
+<body>
+    <header>
+        <h1>My Blog</h1>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project.html">Projects</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Latest Posts</h2>
+        <div class="blog-list">
+            <!-- Example Blog Post -->
+            <div class="blog-card">
+                <h3 class="blog-title">How I Passed the AWS Solutions Architect Exam</h3>
+                <div class="blog-meta">July 2025 &bull; Certification, Cloud</div>
+                <p>
+                    Sharing my journey, tips, and resources that helped me achieve the AWS Solutions Architect – Associate certification.
+                </p>
+                <a class="blog-readmore" href="#">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3 class="blog-title">Getting Started with Penetration Testing</h3>
+                <div class="blog-meta">June 2025 &bull; Security, Learning</div>
+                <p>
+                    An introduction to penetration testing, tools I use, and how to set up your own lab environment.
+                </p>
+                <a class="blog-readmore" href="#">Read More</a>
+            </div>
+            <!-- Add more blog cards as needed -->
+        </div>
+    </div>
+    <script>
+    fetch('/api/blog')
+      .then(res => res.json())
+      .then(posts => {
+        const list = document.querySelector('.blog-list');
+        if (!list) return;
+        list.innerHTML = '';
+        posts.forEach(post => {
+          list.innerHTML += `
+            <div class="blog-card">
+              <h3 class="blog-title">${post.title}</h3>
+              <div class="blog-meta">${post.date} &bull; ${post.tags.join(', ')}</div>
+              <p>${post.summary}</p>
+              <a class="blog-readmore" href="${post.link}">Read More</a>
+            </div>
+          `;
+        });
+      });
+    </script>
+</body>
+</html>

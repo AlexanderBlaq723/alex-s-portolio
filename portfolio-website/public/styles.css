@@ -1,0 +1,114 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/workspaces/alex-s-portolio/uploads/deep-learning-9743962.png);
+     background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+header {
+    background: #222;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+.main-nav {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: right ;
+}
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1.2rem;
+    font-weight: 500;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s;
+}
+.main-nav a:hover, .main-nav a.active {
+    border-bottom: 2px solid #0073e6;
+}
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 2rem;
+}
+.project {
+    margin-bottom: 20px;
+}
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.project-card {
+    background: #fafbfc;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    padding: 1.5rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+.project-card:hover {
+    box-shadow: 0 4px 18px rgba(0,123,230,0.10);
+}
+.project-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background: #f0f0f0;
+}
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.project-issuer {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+.project-link {
+    margin-top: auto;
+    text-align: center;
+}
+.project-link a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: 500;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+@media (max-width: 800px) {
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}

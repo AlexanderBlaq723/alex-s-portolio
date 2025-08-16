@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Mr.Ador Alexander</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Projects</h1>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="project.html" class="active">Projects</a>
+            <a href="#blog">Blog</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Featured Projects & Certifications</h2>
+        <div class="projects-grid">
+            <!-- Example Project Card -->
+            <div class="project-card">
+                <img class="project-image" src="aws-certified-solutions-architect.png" alt="AWS Certified Solutions Architect Badge">
+                <div class="project-title">AWS Certified Solutions Architect – Associate</div>
+                <div class="project-issuer"><em>Issuer: Amazon Web Services</em></div>
+                <div class="project-link">
+                    <a href="https://www.credly.com/badges/your-badge-link" target="_blank">View Credential</a>
+                </div>
+            </div>
+            <!-- Add more project cards below as needed -->
+            <div class="project-card">
+                <img class="project-image" src="project-sample.png" alt="Project Sample">
+                <div class="project-title">Personal Portfolio Website</div>
+                <div class="project-issuer"><em>Frontend Development</em></div>
+                <div class="project-link">
+                    <a href="https://github.com/yourusername/portfolio" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      fetch('/api/projects')
+        .then(res => res.json())
+        .then(projects => {
+          const grid = document.querySelector('.projects-grid');
+          if (!grid) return;
+          grid.innerHTML = '';
+          projects.forEach(p => {
+            grid.innerHTML += `
+              <div class="project-card">
+                <img class="project-image" src="${p.image}" alt="${p.title}">
+                <div class="project-title">${p.title}</div>
+                <div class="project-issuer"><em>Issuer: ${p.issuer}</em></div>
+                <div class="project-link">
+                  <a href="${p.link}" target="_blank">View Credential</a>
+                </div>
+              </div>
+            `;
+          });
+        });
+    </script>
+</body>
+</html>
